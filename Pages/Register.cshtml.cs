@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using LoginApp.Models;
 using LoginApp.Data;
+using LoginApp.Helpers;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
@@ -34,7 +35,6 @@ namespace LoginApp.Pages
 
         public void OnPost()
         {
-            // Verifica se já existe usuário com mesmo nome ou e-mail
             var existente = _context.Users
                 .FirstOrDefault(u => u.UsuarioNome == UsuarioNome || u.Email == Email);
 
@@ -44,18 +44,19 @@ namespace LoginApp.Pages
                 return;
             }
 
-            // Cria novo usuário
+            // Criptografa a senha antes de salvar
+            string senhaCriptografada = HashHelper.ComputeSha256Hash(UsuarioSenha);
+
             var novo = new User
             {
                 UsuarioNome = UsuarioNome,
                 Email = Email,
-                UsuarioSenha = UsuarioSenha
+                UsuarioSenha = senhaCriptografada
             };
 
             _context.Users.Add(novo);
             _context.SaveChanges();
 
-            // Redireciona para página de confirmação
             Response.Redirect("/Confirmacao");
         }
     }
