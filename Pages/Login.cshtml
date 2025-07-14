@@ -1,0 +1,21 @@
+@page
+@model LoginApp.Pages.LoginModel
+
+<h2>Login</h2>
+
+<form method="post">
+    <label>Usuário ou E-mail:</label>
+    <input type="text" asp-for="Identificador" class="form-control" />
+    <br />
+
+    <label>Senha:</label>
+    <input type="password" asp-for="UsuarioSenha" class="form-control" />
+    <br />
+
+    <button type="submit" class="btn btn-primary">Entrar</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.Mensagem))
+{
+    <p class="text-danger">@Model.Mensagem</p>
+}

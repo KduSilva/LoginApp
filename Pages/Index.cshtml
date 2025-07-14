@@ -1,0 +1,45 @@
+﻿@page
+@model LoginApp.Pages.IndexModel
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Bem-vindo ao LoginApp</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        a.button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #007ACC;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        a.button:hover {
+            background-color: #005FA3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>LoginApp</h1>
+    <p>Sistema de autenticação simples com ASP.NET Core, EF Core e SQLite</p>
+
+    <a class="button" asp-page="/Login">Entrar</a>
+    <a class="button" asp-page="/Register">Cadastrar</a>
+</body>
+
+</html>
