@@ -1,4 +1,4 @@
-![LoginApp Banner](loginapp.png)
+![LoginApp Banner](assets/loginapp.png)
 
 # 🔐 LoginApp
 
