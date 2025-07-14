@@ -1,4 +1,4 @@
-![LoginApp Banner](login-app-kdu.png)
+![LoginApp Banner](loginapp.png)
 
 # 🔐 LoginApp
 
