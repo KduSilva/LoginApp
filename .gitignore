@@ -1,0 +1,21 @@
+# Banco de dados SQLite
+*.db
+LoginApp.db
+
+# Diretórios de build
+bin/
+obj/
+
+# Arquivos de usuário e IDE
+*.user
+*.suo
+.vscode/
+*.code-workspace
+
+# Logs e caches
+*.log
+*.cache
+
+# Arquivos temporários
+*.tmp
+*.bak

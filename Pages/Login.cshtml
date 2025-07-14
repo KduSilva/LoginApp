@@ -1,21 +1,37 @@
 @page
 @model LoginApp.Pages.LoginModel
+@{
+    Layout = "_Layout";
+}
 
-<h2>Login</h2>
+<h2 class="text-center mb-4">🔐 Login</h2>
 
-<form method="post">
-    <label>Usuário ou E-mail:</label>
-    <input type="text" asp-for="Identificador" class="form-control" />
-    <br />
+@if (TempData["Despedida"] != null)
+{
+    <div class="alert alert-info text-center">
+        @TempData["Despedida"]
+    </div>
+}
 
-    <label>Senha:</label>
-    <input type="password" asp-for="UsuarioSenha" class="form-control" />
-    <br />
+<form method="post" class="mx-auto" style="max-width: 400px;">
+    <div class="form-group mb-3">
+        <label>Usuário ou E-mail:</label>
+        <input asp-for="Identificador" class="form-control" />
+        <span asp-validation-for="Identificador" class="text-danger"></span>
+    </div>
 
-    <button type="submit" class="btn btn-primary">Entrar</button>
+    <div class="form-group mb-3">
+        <label>Senha:</label>
+        <input asp-for="Senha" type="password" class="form-control" />
+        <span asp-validation-for="Senha" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Entrar</button>
 </form>
 
-@if (!string.IsNullOrEmpty(Model.Mensagem))
+@if (!string.IsNullOrEmpty(Model.MensagemErro))
 {
-    <p class="text-danger">@Model.Mensagem</p>
+    <div class="alert alert-danger text-center mt-3">
+        @Model.MensagemErro
+    </div>
 }

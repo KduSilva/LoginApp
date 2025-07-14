@@ -1,10 +1,12 @@
 @page
 @model LoginApp.Pages.DashboardModel
+@{
+    Layout = "_Layout";
+}
 
-<h2>Bem-vindo, @Model.UsuarioNome!</h2>
+<h2 class="text-center">Bem-vindo, @Model.UsuarioNome! 👋</h2>
+<p class="text-center">Você está logado com sucesso no sistema.</p>
 
-<p>Você está logado com sucesso no sistema.</p>
-
-<form method="post">
-    <button type="submit" class="btn btn-danger">Sair</button>
-</form>
+<div class="text-center mt-4">
+    <a asp-page="/Logout" class="btn btn-outline-danger">Sair</a>
+</div>

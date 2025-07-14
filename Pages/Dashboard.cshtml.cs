@@ -5,23 +5,17 @@ namespace LoginApp.Pages
 {
     public class DashboardModel : PageModel
     {
-        public string UsuarioNome { get; set; }
+        public string UsuarioNome { get; set; } = string.Empty;
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
-            UsuarioNome = HttpContext.Session.GetString("UsuarioLogado");
+            var nome = HttpContext.Session.GetString("usuario_nome");
 
-            if (string.IsNullOrEmpty(UsuarioNome))
-            {
-                // Se não estiver logado, redireciona pro login
-                Response.Redirect("/Login");
-            }
-        }
+            if (string.IsNullOrEmpty(nome))
+                return RedirectToPage("/Login");
 
-        public void OnPost()
-        {
-            HttpContext.Session.Remove("UsuarioLogado");
-            Response.Redirect("/Login");
+            UsuarioNome = nome;
+            return Page();
         }
     }
 }
