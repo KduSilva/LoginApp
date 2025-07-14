@@ -1,4 +1,4 @@
-![LoginApp Banner](login-app-kdu.png)
+![LoginApp Banner](assets/loginapp.png)
 
 # 🔐 LoginApp
 
@@ -47,3 +47,25 @@ O uso comercial, acadêmico ou externo requer **autorização direta do autor**.
 
 > This project does **not use an open-source public license**.  
 > Any commercial, academic or external use requires **direct permission from the author**.
+>
+> - Instale as dependências:
+
+> dotnet restore
+> dotnet tool install --global dotnet-ef
+> Crie o banco:
+> dotnet ef database update
+> - Execute o projeto:
+> - dotnet run
+> - Criado por Kdu
+> - 
+---
+
+Com isso, você pode fazer:
+
+```bash
+git init
+git add .
+git commit -m "Projeto LoginApp completo 🚀"
+git remote add origin https://github.com/seu-usuario/LoginApp.git
+git push -u origin master
+
