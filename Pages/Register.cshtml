@@ -1,0 +1,25 @@
+@page
+@model LoginApp.Pages.RegisterModel
+
+<h2>Cadastro de Usuário</h2>
+
+<form method="post">
+    <label>Email:</label>
+    <input type="email" name="Email" class="form-control" />
+    <br />
+
+    <label>Usuário:</label>
+    <input type="text" name="UsuarioNome" class="form-control" />
+    <br />
+
+    <label>Senha:</label>
+    <input type="password" name="UsuarioSenha" class="form-control" />
+    <br />
+
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.Mensagem))
+{
+    <p>@Model.Mensagem</p>
+}
