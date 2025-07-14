@@ -1,3 +1,5 @@
+![LoginApp Banner](login-app-kdu.png)
+
 # 🔐 LoginApp
 
 Sistema completo de autenticação feito com ASP.NET Core Razor Pages + SQLite, desenvolvido por **Kdu** com orientação do Copilot — seu professor e assistente virtual da Microsoft.  
